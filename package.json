@@ -1,0 +1,74 @@
+{
+  "name": "i18n-maestro",
+  "version": "0.1.0",
+  "description": "一个全面且灵活的国际化解决方案，让多语言支持变得简单。",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint --ext .ts,.tsx src",
+    "lint:fix": "eslint --ext .ts,.tsx src --fix",
+    "check-types": "tsc --noEmit",
+    "docs": "typedoc --out docs-api src/index.ts",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "translation",
+    "localization",
+    "l10n",
+    "multilingual"
+  ],
+  "author": "Martin <lmccc.dev@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "22.13.11",
+    "@typescript-eslint/eslint-plugin": "8.27.0",
+    "@typescript-eslint/parser": "8.27.0",
+    "@vitest/coverage-v8": "3.0.9",
+    "eslint": "9.23.0",
+    "globals": "^16.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "tsup": "^8.0.2",
+    "typedoc": "0.28.1",
+    "typescript": "^5.3.3",
+    "vitest": "3.0.9"
+  },
+  "dependencies": {
+    "chalk": "5.4.1",
+    "commander": "13.1.0",
+    "deepmerge": "^4.3.1",
+    "glob": "11.0.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "vitest related --run"
+    ]
+  }
+}
